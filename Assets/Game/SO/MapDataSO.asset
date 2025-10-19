@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b681a26045d54d928a295926d65c4471, type: 3}
+  m_Name: MapDataSO
+  m_EditorClassIdentifier: 
+  Maps:
+  - mapId: map_1
+    mapTitle: City 1
+    numberOfCar: 2
+    renderTexture: {fileID: 8400000, guid: 93123105ba4624addb777f9c30fe8f75, type: 2}
+  - mapId: map_2
+    mapTitle: Desert 1
+    numberOfCar: 2
+    renderTexture: {fileID: 8400000, guid: 6f133beb4b0c04aeb9ece9c008c578b8, type: 2}
+  - mapId: map_3
+    mapTitle: Mountain 1
+    numberOfCar: 2
+    renderTexture: {fileID: 8400000, guid: a40d258b6b1d645f894c9aba3d25c0fd, type: 2}
+  - mapId: map_4
+    mapTitle: City 2
+    numberOfCar: 3
+    renderTexture: {fileID: 8400000, guid: 93123105ba4624addb777f9c30fe8f75, type: 2}
+  - mapId: map_5
+    mapTitle: Desert 2
+    numberOfCar: 3
+    renderTexture: {fileID: 8400000, guid: 6f133beb4b0c04aeb9ece9c008c578b8, type: 2}
+  - mapId: map_6
+    mapTitle: Mountain 2
+    numberOfCar: 3
+    renderTexture: {fileID: 8400000, guid: a40d258b6b1d645f894c9aba3d25c0fd, type: 2}
