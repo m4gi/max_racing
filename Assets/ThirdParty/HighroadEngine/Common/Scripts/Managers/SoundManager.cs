@@ -9,7 +9,7 @@ namespace MoreMountains.HighroadEngine
 	/// <summary>
 	/// This persistent singleton handles sound playing
 	/// </summary>
-	public class SoundManager : MonoBehaviour
+	public class SoundManager : MMPersistentSingleton<SoundManager>
 	{	
 		/// true if the music is enabled	
 		public bool MusicOn=true;
@@ -26,6 +26,9 @@ namespace MoreMountains.HighroadEngine
 
 	    protected AudioSource _backgroundMusic;
 
+	    private bool localMusicOn;
+	    private bool localSfxOn;
+
 	    private void Start()
 	    {
 		    LocalDataPlayer.Instance.OnSoundChanged += UpdateSound;
@@ -39,8 +42,8 @@ namespace MoreMountains.HighroadEngine
 
 	    private void UpdateSound(bool sfxOn, bool musicOn)
 	    {
-		    MusicOn = musicOn;
-		    SfxOn = sfxOn;
+		    localMusicOn = musicOn;
+		    localSfxOn = sfxOn;
 		    foreach (AudioSource audioSource in soundGames.ToList())
 		    {
 			    if (audioSource == null)
@@ -79,7 +82,7 @@ namespace MoreMountains.HighroadEngine
 			// we start playing the background music
 			_backgroundMusic.Play();		
 			
-			_backgroundMusic.mute = !MusicOn;
+			_backgroundMusic.mute = !localMusicOn;
 		}	
 
 		/// <summary>
@@ -118,6 +121,7 @@ namespace MoreMountains.HighroadEngine
 			// we start playing the sound
 			audioSource.Play(); 
 			// we destroy the host after the clip has played
+			audioSource.mute = !localMusicOn;
 			if (shouldDestroyAfterPlay)
 			{
 				Destroy(temporaryAudioHost, sfx.length);
@@ -152,7 +156,7 @@ namespace MoreMountains.HighroadEngine
 			// we start playing the sound
 			audioSource.Play(); 
 			
-			audioSource.mute = !SfxOn;
+			audioSource.mute = !localSfxOn;
 			
 			soundGames.Add(audioSource);
 			// we return the audiosource reference

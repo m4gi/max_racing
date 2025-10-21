@@ -6,7 +6,7 @@ using MoreMountains.Tools;
 using Newtonsoft.Json;
 using UnityEngine;
 
-public class LocalDataPlayer : MMPersistentHumbleSingleton<LocalDataPlayer>
+public class LocalDataPlayer : MMPersistentSingleton<LocalDataPlayer>
 {
     public MapDataSO MapData;
     public List<int> PricePool;
