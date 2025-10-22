@@ -109,7 +109,8 @@ namespace MoreMountains.HighroadEngine
 					if (_engineSound != null)
 					{
 						_engineSoundPitch = _engineSound.pitch;
-						_engineSound.volume = 0;
+						// _engineSound.volume = 0;
+						_engineSound.pitch = .4f;
 					}
 				}
 			}
@@ -124,7 +125,7 @@ namespace MoreMountains.HighroadEngine
 
 			TurnWheels();
 
-			ManageSounds();
+			//ManageSounds();
 
 			if (_carController.IsGrounded)
 			{

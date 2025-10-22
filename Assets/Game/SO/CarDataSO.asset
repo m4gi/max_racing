@@ -19,6 +19,6 @@ MonoBehaviour:
   - carId: Frerara
     carName: Frerara
     price: 10000
-  - carId: BatmanCar
-    carName: Batman Car
+  - carId: DarkStar
+    carName: Dark Star
     price: 100000
